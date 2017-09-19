@@ -1,0 +1,30 @@
+AppBundle\Entity\Tdepartmentemployees:
+    type: entity
+    table: tdepartmentemployees
+    uniqueConstraints:
+        id:
+            columns:
+                - id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        departmentid:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: departmentID
+        employeeid:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: employeeID
+    lifecycleCallbacks: {  }

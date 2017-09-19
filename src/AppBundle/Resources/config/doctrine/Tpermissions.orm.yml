@@ -1,0 +1,27 @@
+AppBundle\Entity\Tpermissions:
+    type: entity
+    table: tpermissions
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        contactid:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: contactID
+        permissionListid:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: permission_listID
+    lifecycleCallbacks: {  }

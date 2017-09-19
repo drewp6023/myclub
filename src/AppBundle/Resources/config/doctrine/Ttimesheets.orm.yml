@@ -1,0 +1,59 @@
+AppBundle\Entity\Ttimesheets:
+    type: entity
+    table: ttimesheets
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        employeeid:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: employeeID
+        startdate:
+            type: datetime
+            nullable: true
+        enddate:
+            type: datetime
+            nullable: true
+        datecreated:
+            type: datetime
+            nullable: true
+        modifieddate:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+        workhours:
+            type: decimal
+            nullable: true
+            precision: 15
+            scale: 2
+        overtime:
+            type: decimal
+            nullable: true
+            precision: 15
+            scale: 2
+        totalhours:
+            type: decimal
+            nullable: true
+            precision: 15
+            scale: 2
+        active:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+        approved:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+    lifecycleCallbacks: {  }

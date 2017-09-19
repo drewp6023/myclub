@@ -1,0 +1,33 @@
+AppBundle\Entity\Tlists:
+    type: entity
+    table: tlists
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        label:
+            type: string
+            nullable: true
+            length: 25
+            options:
+                fixed: false
+        description:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        parentListid:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: parent_listID
+    lifecycleCallbacks: {  }

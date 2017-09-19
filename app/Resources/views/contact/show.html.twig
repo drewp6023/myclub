@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>
+        {% if contact.firstname is defined %}
+            {{ contact.firstname }} {{ contact.lastname }}
+        {% else %}
+            Oops - Contact Not Found
+        {% endif %}
+    </h1>
+
+    <hr />
+
+    {{ form_start(contactForm) }}
+    {{ form_widget(contactForm) }}
+    {{ form_end(contactForm) }}
+
+    {% if contact is defined %}
+        <hr />
+
+        {{ form_start(contactForm) }}
+        {{ form_widget(contactForm) }}
+        {{ form_end(contactForm) }}
+    {% endif %}
+{% endblock %}

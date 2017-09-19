@@ -1,0 +1,37 @@
+AppBundle\Entity\Tlogins:
+    type: entity
+    table: tlogins
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        contactid:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: contactID
+        logintime:
+            type: datetime
+            nullable: true
+        logouttime:
+            type: datetime
+            nullable: true
+        failedloginattempts:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        modifieddate:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+    lifecycleCallbacks: {  }

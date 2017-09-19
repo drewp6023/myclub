@@ -1,0 +1,32 @@
+AppBundle\Entity\Temployees:
+    type: entity
+    table: temployees
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        contactid:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: contactID
+        hiredate:
+            type: datetime
+            nullable: true
+        terminationdate:
+            type: datetime
+            nullable: true
+        modifieddate:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+    lifecycleCallbacks: {  }

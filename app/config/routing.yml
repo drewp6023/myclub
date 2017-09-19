@@ -1,0 +1,33 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+homepage:
+    path: /
+    defaults:
+        _controller: AppBundle:Home:default
+homepage:
+    path: /home
+    defaults:
+        _controller: AppBundle:Home:default
+contact.add:
+    path: /contact/add
+    defaults:
+        _controller: AppBundle:Contact:add
+    requirements:
+contact.show:
+    path: /contact/{contactID}
+    defaults:
+        _controller: AppBundle:Contact:show
+    requirements:
+        contactID: '\d+'
+contact.default:
+    path: /contacts
+    defaults:
+        _controller: AppBundle:Contact:default
+contact.list:
+    path: /contacts/{page}
+    defaults:
+        _controller: AppBundle:Contact:list
+        page: 1
+    requirements:
+        page: '\d+'

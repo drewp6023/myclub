@@ -1,0 +1,53 @@
+AppBundle\Entity\Taudittrail:
+    type: entity
+    table: taudittrail
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        tablename:
+            type: string
+            nullable: true
+            length: 25
+            options:
+                fixed: false
+        columnname:
+            type: string
+            nullable: true
+            length: 25
+            options:
+                fixed: false
+        row:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        modifieddate:
+            type: datetime
+            nullable: true
+        contactid:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: contactID
+        oldvalue:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        newvalue:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }
