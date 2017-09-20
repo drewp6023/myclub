@@ -13,15 +13,32 @@ use AppBundle\Entity\Tcontacts;
 
 class ContactController extends Controller
 {
-    public function showAction($contactID)
+    public function showAction($contactID, Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $repository = $this->getDoctrine()->getRepository('AppBundle:Tcontacts');
         $contact = $repository->find($contactID);
 
         $form = $this->createFormBuilder()
-            ->add('Firstname', TextType::class)
+            ->add('firstname', TextType::class)
+            ->add('submit', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn btn-primary'
+                ]
+            ])
             ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            // Individual form properties
+            // $userInput_firstname = $form->getData('firstname');
+
+            // Get all submitted form data
+            dump($form->getData());
+
+        }
 
         // replace this example code with whatever you need
         return $this->render('contact/show.html.twig', [
@@ -55,5 +72,15 @@ class ContactController extends Controller
         return $this->render('contact/default.html.twig', [
             'contacts' => $contacts
         ]);
+    }
+
+    private function sendMail($email, $msg) {
+        $mail = \Swift_Message::newInstance()
+            ->setSubject('Test Email From myClub')
+            ->setFrom('admin@mcms.com')
+            ->setTo($email)
+            ->setbody($msg);
+
+        $this->get('mailer')->send($mail);
     }
 }
