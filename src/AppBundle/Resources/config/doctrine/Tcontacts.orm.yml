@@ -1,6 +1,7 @@
 AppBundle\Entity\Tcontacts:
     type: entity
     table: tcontacts
+    repositoryClass: AppBundle\Repository\ContactRepository
     uniqueConstraints:
         id:
             columns:

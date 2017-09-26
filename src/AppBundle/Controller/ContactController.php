@@ -2,68 +2,21 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Form\Type\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use AppBundle\Entity\Tcontacts;
 
 class ContactController extends Controller
 {
-    public function showAction($contactID, Request $request)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Tcontacts');
-        $contact = $repository->find($contactID);
 
-        $form = $this->createFormBuilder()
-            ->add('firstname', TextType::class)
-            ->add('submit', SubmitType::class, [
-                'attr' => [
-                    'class' => 'btn btn-primary'
-                ]
-            ])
-            ->getForm();
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            // Individual form properties
-            // $userInput_firstname = $form->getData('firstname');
-
-            // Get all submitted form data
-            dump($form->getData());
-
-        }
-
-        // replace this example code with whatever you need
-        return $this->render('contact/show.html.twig', [
-            'contact' => $contact,
-            'contactForm' => $form->createView()
-        ]);
-    }
-
-    public function addAction()
-    {
-
-        // replace this example code with whatever you need
-        return $this->render('contact/add.html.twig', [
-            // 'contact' => $contact
-        ]);
-    }
-
-    public function listAction($page = 1)
-    {
-
-        return $this->render('contact/contacts.html.twig', [
-            'page' => $page
-        ]);
-    }
-
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function defaultAction()
     {
         $repository = $this->getDoctrine()->getRepository('AppBundle:Tcontacts');
@@ -74,9 +27,105 @@ class ContactController extends Controller
         ]);
     }
 
+    /**
+     * @param Tcontacts $contact
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function deleteAction(Tcontacts $contact)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($contact);
+        $em->flush();
+        return $this->redirectToRoute('contact.default');
+    }
+
+    /**
+     * @param int $page
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function listAction($page = 1)
+    {
+
+        return $this->render('contact/contacts.html.twig', [
+            'page' => $page
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function newAction(Request $request)
+    {
+        $nextIdOnStack = $this->getDoctrine()->getRepository('AppBundle:Tcontacts')->getNextIdOnStack();
+        $contact = new Tcontacts();
+        $contact->setUsername('contact_' . $nextIdOnStack);
+
+        $form = $this->createForm(ContactType::class, $contact);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $em = $this->getDoctrine()->getManager();
+
+            // Get all submitted form data
+            $contact = $form->getData();
+
+            $em->persist($contact);
+            $em->flush();
+
+            $this->addFlash('success', 'You have successfully added contact with ID ' . $contact->getId());
+
+            // Clear the form
+            $contact = new Tcontacts();
+            $contact->setUsername('contact_' . $nextIdOnStack);
+            $form = $this->createForm(ContactType::class, $contact);
+
+        }
+
+        // replace this example code with whatever you need
+        return $this->render('contact/new.html.twig', [
+            'contactForm' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param Tcontacts $contact
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function showAction(Request $request, Tcontacts $contact)
+    {
+
+        $form = $this->createForm(ContactType::class, $contact);
+
+        $form->handleRequest($request);
+
+        // This block is ran ONLY if the form has been submitted
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+
+            return $this->redirectToRoute('contact.default');
+
+        }
+
+        // replace this example code with whatever you need
+        return $this->render('contact/show.html.twig', [
+            'contact' => $contact,
+            'contactForm' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @param $email
+     * @param $msg
+     */
     private function sendMail($email, $msg) {
         $mail = \Swift_Message::newInstance()
-            ->setSubject('Test Email From myClub')
+            ->setSubject('Test Email Form myClub')
             ->setFrom('admin@mcms.com')
             ->setTo($email)
             ->setbody($msg);

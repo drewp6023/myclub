@@ -95,7 +95,18 @@ class Tcontacts
     /**
      * @var \DateTime
      */
-    private $modifieddate = 'CURRENT_TIMESTAMP';
+    private $modifieddate;
+
+    public function __construct()
+    {
+        $format = 'Y-m-d H:i:s';
+
+        $this->setModifieddate(new \DateTime(date($format)));
+
+        if ($this->getDatecreated() == null) {
+            $this->setDatecreated(new \DateTime(date($format)));
+        }
+    }
 
 
     /**
