@@ -5,6 +5,7 @@ namespace AppBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -25,7 +26,7 @@ class ContactType extends AbstractType
             ->add('city', TextType::class)
             ->add('state', TextType::class)
             ->add('zip', TextType::class)
-            ->add('email', TextType::class)
+            ->add('email', EmailType::class)
             ->add('phone1', TextType::class)
             ->add('username', TextType::class)
             ->add('submit', SubmitType::class, [

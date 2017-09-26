@@ -1,0 +1,24 @@
+AppBundle\Entity\Contact:
+    properties:
+        firstname:
+            - NotBlank: ~
+        lastname:
+            - NotBlank: ~
+        address1:
+            - NotBlank: ~
+        city:
+            - NotBlank: ~
+        state:
+            - NotBlank: ~
+        zip:
+            - NotBlank: ~
+        email:
+            - NotBlank: ~
+            - Email:
+                message: 'The eamil "{{ value }}" is not a valid email.'
+                checkMX: true
+        phone1:
+            - NotBlank: ~
+            - Length:
+                min: 10
+                minMessage: 'Your phone number must be at least {{ limit }} characters'
