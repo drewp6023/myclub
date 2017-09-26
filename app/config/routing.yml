@@ -40,3 +40,7 @@ contact.list:
         page: 1
     requirements:
         page: '\d+'
+security.login:
+    path: /login
+    defaults:
+        _controller: AppBundle:Security:login

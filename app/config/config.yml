@@ -36,8 +36,8 @@ framework:
 # Assetic Configuration
 assetic:
     debug:          '%kernel.debug%'
-    #use_controller: '%kernel.debug%'
-    use_controller: false
+    use_controller: '%kernel.debug%'
+    # use_controller: false
     bundles: [ ]
     filters:
         cssrewrite: ~
