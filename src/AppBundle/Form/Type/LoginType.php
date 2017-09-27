@@ -19,7 +19,7 @@ class LoginType extends AbstractType
             ->add('password', PasswordType::class)
             ->add('submit', SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn btn-primary'
+                    'class' => 'btn btn-primary btn-block'
                 ]
             ]);
     }

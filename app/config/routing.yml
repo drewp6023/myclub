@@ -44,3 +44,11 @@ security.login:
     path: /login
     defaults:
         _controller: AppBundle:Security:login
+security.login:
+    path: /login
+    defaults:
+        _controller: AppBundle:Security:login
+security.login:
+    path: /login
+    defaults:
+        _controller: AppBundle:Security:login

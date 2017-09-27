@@ -19,8 +19,7 @@ class ContactController extends Controller
      */
     public function defaultAction()
     {
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Tcontacts');
-        $contacts = $repository->findAll();
+        $contacts = $this->getDoctrine()->getRepository('AppBundle:Tcontacts')->findAll();
 
         return $this->render('contact/default.html.twig', [
             'contacts' => $contacts
@@ -57,9 +56,7 @@ class ContactController extends Controller
      */
     public function newAction(Request $request)
     {
-        $nextIdOnStack = $this->getDoctrine()->getRepository('AppBundle:Tcontacts')->getNextIdOnStack();
         $contact = new Tcontacts();
-        $contact->setUsername('contact_' . $nextIdOnStack);
 
         $form = $this->createForm(ContactType::class, $contact);
 
@@ -79,7 +76,7 @@ class ContactController extends Controller
 
             // Clear the form
             $contact = new Tcontacts();
-            $contact->setUsername('contact_' . $nextIdOnStack);
+            $contact->setUsername('contact_');
             $form = $this->createForm(ContactType::class, $contact);
 
         }

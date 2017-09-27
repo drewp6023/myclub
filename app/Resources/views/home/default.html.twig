@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div id="homepage-jumbotron" class="jumbotron">
+        <h1>myClub Management Suite</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Club Metrics</h3>
+                </div>
+                {#<div class="panel-body">#}
+                    {#<p>List of club metrics are below</p>#}
+                {#</div>#}
+                <!-- List group -->
+                <div class="list-group">
+                    <a href="#" class="list-group-item">Contacts <span class="badge">{{ totalContacts }}</span></a>
+                </div>
+                <!-- List group -->
+                <div class="list-group">
+                    <a href="#" class="list-group-item">Total logged in <span class="badge">0</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            {#<div class="panel panel-primary">#}
+                {#<div class="panel-heading">#}
+                    {#<h3 class="panel-title">Club Metrics</h3>#}
+                {#</div>#}
+                {#<div class="panel-body">#}
+                    {#<p>List of club metrics are below</p>#}
+                {#</div>#}
+                {#<!-- List group -->#}
+                {#<div class="list-group">#}
+                    {#<a href="#" class="list-group-item">Contacts <span class="badge"></span></a>#}
+                {#</div>#}
+            {#</div>#}
+        </div>
+        <div class="col-md-4">
+            {#<div class="panel panel-primary">#}
+                {#<div class="panel-heading">#}
+                    {#<h3 class="panel-title">Club Metrics</h3>#}
+                {#</div>#}
+                {#<div class="panel-body">#}
+                    {#<p>List of club metrics are below</p>#}
+                {#</div>#}
+                {#<!-- List group -->#}
+                {#<div class="list-group">#}
+                    {#<a href="#" class="list-group-item">Contacts <span class="badge"></span></a>#}
+                {#</div>#}
+            {#</div>#}
+        </div>
+    </div>
+{% endblock %}

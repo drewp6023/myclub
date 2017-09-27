@@ -1,1 +1,30 @@
 /* REMEMBER: MOBILE FIRST! (Use @media (min-width: 800px) for desktop */
+
+/* BEGIN: Globals */
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#login-form-container {
+    background-color: white;
+}
+@media (min-width: 800px) {
+    #login-form-container {
+        padding: 20px;
+    }
+}
+#homepage-jumbotron {
+    /*background-repeat: no-repeat;*/
+    /*background-image: url();*/
+    /*background-size: cover;*/
+    /*background-position: 0px;*/
+}
+@media (min-width: 800px) {
+    #homepage-jumbotron {
+
+    }
+}
+
+/* END: Globals *?
