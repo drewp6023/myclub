@@ -71,5 +71,182 @@ class Audittrail
     private $newvalue;
 
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set tablename
+     *
+     * @param string $tablename
+     *
+     * @return Audittrail
+     */
+    public function setTablename($tablename)
+    {
+        $this->tablename = $tablename;
+
+        return $this;
+    }
+
+    /**
+     * Get tablename
+     *
+     * @return string
+     */
+    public function getTablename()
+    {
+        return $this->tablename;
+    }
+
+    /**
+     * Set columnname
+     *
+     * @param string $columnname
+     *
+     * @return Audittrail
+     */
+    public function setColumnname($columnname)
+    {
+        $this->columnname = $columnname;
+
+        return $this;
+    }
+
+    /**
+     * Get columnname
+     *
+     * @return string
+     */
+    public function getColumnname()
+    {
+        return $this->columnname;
+    }
+
+    /**
+     * Set row
+     *
+     * @param integer $row
+     *
+     * @return Audittrail
+     */
+    public function setRow($row)
+    {
+        $this->row = $row;
+
+        return $this;
+    }
+
+    /**
+     * Get row
+     *
+     * @return integer
+     */
+    public function getRow()
+    {
+        return $this->row;
+    }
+
+    /**
+     * Set modifieddate
+     *
+     * @param \DateTime $modifieddate
+     *
+     * @return Audittrail
+     */
+    public function setModifieddate($modifieddate)
+    {
+        $this->modifieddate = $modifieddate;
+
+        return $this;
+    }
+
+    /**
+     * Get modifieddate
+     *
+     * @return \DateTime
+     */
+    public function getModifieddate()
+    {
+        return $this->modifieddate;
+    }
+
+    /**
+     * Set contactid
+     *
+     * @param integer $contactid
+     *
+     * @return Audittrail
+     */
+    public function setContactid($contactid)
+    {
+        $this->contactid = $contactid;
+
+        return $this;
+    }
+
+    /**
+     * Get contactid
+     *
+     * @return integer
+     */
+    public function getContactid()
+    {
+        return $this->contactid;
+    }
+
+    /**
+     * Set oldvalue
+     *
+     * @param string $oldvalue
+     *
+     * @return Audittrail
+     */
+    public function setOldvalue($oldvalue)
+    {
+        $this->oldvalue = $oldvalue;
+
+        return $this;
+    }
+
+    /**
+     * Get oldvalue
+     *
+     * @return string
+     */
+    public function getOldvalue()
+    {
+        return $this->oldvalue;
+    }
+
+    /**
+     * Set newvalue
+     *
+     * @param string $newvalue
+     *
+     * @return Audittrail
+     */
+    public function setNewvalue($newvalue)
+    {
+        $this->newvalue = $newvalue;
+
+        return $this;
+    }
+
+    /**
+     * Get newvalue
+     *
+     * @return string
+     */
+    public function getNewvalue()
+    {
+        return $this->newvalue;
+    }
+}

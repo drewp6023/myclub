@@ -85,5 +85,230 @@ class Payments
     private $bankingcheckid;
 
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set contactid
+     *
+     * @param integer $contactid
+     *
+     * @return Payments
+     */
+    public function setContactid($contactid)
+    {
+        $this->contactid = $contactid;
+
+        return $this;
+    }
+
+    /**
+     * Get contactid
+     *
+     * @return integer
+     */
+    public function getContactid()
+    {
+        return $this->contactid;
+    }
+
+    /**
+     * Set employeeid
+     *
+     * @param integer $employeeid
+     *
+     * @return Payments
+     */
+    public function setEmployeeid($employeeid)
+    {
+        $this->employeeid = $employeeid;
+
+        return $this;
+    }
+
+    /**
+     * Get employeeid
+     *
+     * @return integer
+     */
+    public function getEmployeeid()
+    {
+        return $this->employeeid;
+    }
+
+    /**
+     * Set amountpaid
+     *
+     * @param string $amountpaid
+     *
+     * @return Payments
+     */
+    public function setAmountpaid($amountpaid)
+    {
+        $this->amountpaid = $amountpaid;
+
+        return $this;
+    }
+
+    /**
+     * Get amountpaid
+     *
+     * @return string
+     */
+    public function getAmountpaid()
+    {
+        return $this->amountpaid;
+    }
+
+    /**
+     * Set amountreceived
+     *
+     * @param string $amountreceived
+     *
+     * @return Payments
+     */
+    public function setAmountreceived($amountreceived)
+    {
+        $this->amountreceived = $amountreceived;
+
+        return $this;
+    }
+
+    /**
+     * Get amountreceived
+     *
+     * @return string
+     */
+    public function getAmountreceived()
+    {
+        return $this->amountreceived;
+    }
+
+    /**
+     * Set paymentdate
+     *
+     * @param \DateTime $paymentdate
+     *
+     * @return Payments
+     */
+    public function setPaymentdate($paymentdate)
+    {
+        $this->paymentdate = $paymentdate;
+
+        return $this;
+    }
+
+    /**
+     * Get paymentdate
+     *
+     * @return \DateTime
+     */
+    public function getPaymentdate()
+    {
+        return $this->paymentdate;
+    }
+
+    /**
+     * Set modifieddate
+     *
+     * @param \DateTime $modifieddate
+     *
+     * @return Payments
+     */
+    public function setModifieddate($modifieddate)
+    {
+        $this->modifieddate = $modifieddate;
+
+        return $this;
+    }
+
+    /**
+     * Get modifieddate
+     *
+     * @return \DateTime
+     */
+    public function getModifieddate()
+    {
+        return $this->modifieddate;
+    }
+
+    /**
+     * Set paymentListid
+     *
+     * @param integer $paymentListid
+     *
+     * @return Payments
+     */
+    public function setPaymentListid($paymentListid)
+    {
+        $this->paymentListid = $paymentListid;
+
+        return $this;
+    }
+
+    /**
+     * Get paymentListid
+     *
+     * @return integer
+     */
+    public function getPaymentListid()
+    {
+        return $this->paymentListid;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Payments
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set bankingcheckid
+     *
+     * @param integer $bankingcheckid
+     *
+     * @return Payments
+     */
+    public function setBankingcheckid($bankingcheckid)
+    {
+        $this->bankingcheckid = $bankingcheckid;
+
+        return $this;
+    }
+
+    /**
+     * Get bankingcheckid
+     *
+     * @return integer
+     */
+    public function getBankingcheckid()
+    {
+        return $this->bankingcheckid;
+    }
+}

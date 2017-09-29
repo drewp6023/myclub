@@ -50,5 +50,110 @@ class Employees
     private $modifieddate = 'CURRENT_TIMESTAMP';
 
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set contactid
+     *
+     * @param integer $contactid
+     *
+     * @return Employees
+     */
+    public function setContactid($contactid)
+    {
+        $this->contactid = $contactid;
+
+        return $this;
+    }
+
+    /**
+     * Get contactid
+     *
+     * @return integer
+     */
+    public function getContactid()
+    {
+        return $this->contactid;
+    }
+
+    /**
+     * Set hiredate
+     *
+     * @param \DateTime $hiredate
+     *
+     * @return Employees
+     */
+    public function setHiredate($hiredate)
+    {
+        $this->hiredate = $hiredate;
+
+        return $this;
+    }
+
+    /**
+     * Get hiredate
+     *
+     * @return \DateTime
+     */
+    public function getHiredate()
+    {
+        return $this->hiredate;
+    }
+
+    /**
+     * Set terminationdate
+     *
+     * @param \DateTime $terminationdate
+     *
+     * @return Employees
+     */
+    public function setTerminationdate($terminationdate)
+    {
+        $this->terminationdate = $terminationdate;
+
+        return $this;
+    }
+
+    /**
+     * Get terminationdate
+     *
+     * @return \DateTime
+     */
+    public function getTerminationdate()
+    {
+        return $this->terminationdate;
+    }
+
+    /**
+     * Set modifieddate
+     *
+     * @param \DateTime $modifieddate
+     *
+     * @return Employees
+     */
+    public function setModifieddate($modifieddate)
+    {
+        $this->modifieddate = $modifieddate;
+
+        return $this;
+    }
+
+    /**
+     * Get modifieddate
+     *
+     * @return \DateTime
+     */
+    public function getModifieddate()
+    {
+        return $this->modifieddate;
+    }
+}

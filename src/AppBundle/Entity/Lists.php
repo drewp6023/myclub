@@ -43,5 +43,86 @@ class Lists
     private $parentListid;
 
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set label
+     *
+     * @param string $label
+     *
+     * @return Lists
+     */
+    public function setLabel($label)
+    {
+        $this->label = $label;
+
+        return $this;
+    }
+
+    /**
+     * Get label
+     *
+     * @return string
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Lists
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set parentListid
+     *
+     * @param integer $parentListid
+     *
+     * @return Lists
+     */
+    public function setParentListid($parentListid)
+    {
+        $this->parentListid = $parentListid;
+
+        return $this;
+    }
+
+    /**
+     * Get parentListid
+     *
+     * @return integer
+     */
+    public function getParentListid()
+    {
+        return $this->parentListid;
+    }
+}

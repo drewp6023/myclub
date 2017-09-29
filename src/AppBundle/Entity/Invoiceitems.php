@@ -29,5 +29,38 @@ class Invoiceitems
     private $invoiceid;
 
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set invoiceid
+     *
+     * @param integer $invoiceid
+     *
+     * @return Invoiceitems
+     */
+    public function setInvoiceid($invoiceid)
+    {
+        $this->invoiceid = $invoiceid;
+
+        return $this;
+    }
+
+    /**
+     * Get invoiceid
+     *
+     * @return integer
+     */
+    public function getInvoiceid()
+    {
+        return $this->invoiceid;
+    }
+}

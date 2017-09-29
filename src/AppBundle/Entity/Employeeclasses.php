@@ -36,5 +36,62 @@ class Employeeclasses
     private $classid;
 
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set employeeid
+     *
+     * @param integer $employeeid
+     *
+     * @return Employeeclasses
+     */
+    public function setEmployeeid($employeeid)
+    {
+        $this->employeeid = $employeeid;
+
+        return $this;
+    }
+
+    /**
+     * Get employeeid
+     *
+     * @return integer
+     */
+    public function getEmployeeid()
+    {
+        return $this->employeeid;
+    }
+
+    /**
+     * Set classid
+     *
+     * @param integer $classid
+     *
+     * @return Employeeclasses
+     */
+    public function setClassid($classid)
+    {
+        $this->classid = $classid;
+
+        return $this;
+    }
+
+    /**
+     * Get classid
+     *
+     * @return integer
+     */
+    public function getClassid()
+    {
+        return $this->classid;
+    }
+}
