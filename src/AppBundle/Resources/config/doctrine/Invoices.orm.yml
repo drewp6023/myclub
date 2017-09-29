@@ -1,0 +1,52 @@
+AppBundle\Entity\Invoices:
+    type: entity
+    table: invoices
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        contactid:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: contactID
+        employeeid:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: employeeID
+        invoicedate:
+            type: datetime
+            nullable: true
+        startdate:
+            type: datetime
+            nullable: true
+        enddate:
+            type: datetime
+            nullable: true
+        pricetotalgrand:
+            type: decimal
+            nullable: true
+            precision: 15
+            scale: 2
+        modifieddate:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+        clubid:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: clubID
+    lifecycleCallbacks: {  }

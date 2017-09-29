@@ -10,7 +10,7 @@ class ContactRepository extends EntityRepository
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT c FROM AppBundle:Tcontacts c ORDER BY c.firstname ASC'
+                'SELECT c FROM AppBundle:Contacts c ORDER BY c.firstname ASC'
             )
             ->getResult();
     }
@@ -19,7 +19,7 @@ class ContactRepository extends EntityRepository
     {
         $result = $this->getEntityManager()
             ->createQuery(
-                'SELECT c.id FROM AppBundle:Tcontacts c ORDER BY c.id DESC'
+                'SELECT c.id FROM AppBundle:Contacts c ORDER BY c.id DESC'
             )
             ->setMaxResults(1)
             ->getResult();

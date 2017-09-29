@@ -1,0 +1,18 @@
+AppBundle\Entity\Classes:
+    type: entity
+    table: classes
+    uniqueConstraints:
+        ID:
+            columns:
+                - ID
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    lifecycleCallbacks: {  }
