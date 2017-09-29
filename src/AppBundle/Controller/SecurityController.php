@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-use AppBundle\Entity\Tcontacts;
+use AppBundle\Entity\Contacts;
 use AppBundle\Form\Type\LoginType;
 
 class SecurityController extends Controller
@@ -18,7 +18,7 @@ class SecurityController extends Controller
 
     public function loginAction(Request $request, AuthenticationUtils $authUtils) {
 
-        $contact = new Tcontacts();
+        $contact = new Contacts();
         $form = $this->createForm(LoginType::class, $contact);
 
         $form->handleRequest($request);

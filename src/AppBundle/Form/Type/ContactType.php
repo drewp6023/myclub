@@ -29,7 +29,7 @@ class ContactType extends AbstractType
             ->add('email', EmailType::class)
             ->add('phone1', TextType::class)
             ->add('username', TextType::class)
-            ->add('password', TextType::class)
+            ->add('password', PasswordType::class)
             ->add('submit', SubmitType::class, [
                 'attr' => [
                     'class' => 'btn btn-primary'

@@ -138,9 +138,13 @@ class Contacts
      *
      * @ORM\Column(name="modifieddate", type="datetime", nullable=false)
      */
-    private $modifieddate = 'CURRENT_TIMESTAMP';
+    private $modifieddate;
 
-
+    public function __construct()
+    {
+        $this->setDatecreated(new \DateTime());
+        $this->setModifieddate(new \DateTime());
+    }
 
     /**
      * Get id

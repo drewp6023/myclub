@@ -3,7 +3,7 @@
 // src/AppBundle/Controller/HomeController.php
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Tcontacts;
+use AppBundle\Entity\Contacts;
 use AppBundle\Repository\ContactRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,7 +17,7 @@ class HomeController extends Controller
 
     public function defaultAction()
     {
-        $contacts = $this->getDoctrine()->getRepository('AppBundle:Tcontacts')->findAll();
+        $contacts = $this->getDoctrine()->getRepository('AppBundle:Contacts')->findAll();
 
         return $this->render('home/default.html.twig', array(
             'totalContacts' => count($contacts),
