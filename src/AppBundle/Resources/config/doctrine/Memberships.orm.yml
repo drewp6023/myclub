@@ -1,0 +1,42 @@
+AppBundle\Entity\Memberships:
+    type: entity
+    table: memberships
+    uniqueConstraints:
+        id:
+            columns:
+                - id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        contactid:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: contactID
+        modifieddate:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+        active:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+        frozen:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+        datecreated:
+            type: datetime
+            nullable: true
+    lifecycleCallbacks: {  }

@@ -10,7 +10,7 @@ class ContactRepository extends EntityRepository
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT c FROM AppBundle:Tcontacts c ORDER BY c.firstname ASC'
+                'SELECT c FROM AppBundle:Contacts c ORDER BY c.firstname ASC'
             )
             ->getResult();
     }

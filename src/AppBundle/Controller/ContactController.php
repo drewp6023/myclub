@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use AppBundle\Entity\Tcontacts;
+use AppBundle\Entity\Contacts;
 
 class ContactController extends Controller
 {
@@ -19,7 +19,8 @@ class ContactController extends Controller
      */
     public function defaultAction()
     {
-        $contacts = $this->getDoctrine()->getRepository('AppBundle:Tcontacts')->findAll();
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Contacts');
+        $contacts = $repository->findAll();
 
         return $this->render('contact/default.html.twig', [
             'contacts' => $contacts
@@ -27,10 +28,10 @@ class ContactController extends Controller
     }
 
     /**
-     * @param Tcontacts $contact
+     * @param Contacts $contact
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function deleteAction(Tcontacts $contact)
+    public function deleteAction(Contacts $contact)
     {
         $em = $this->getDoctrine()->getManager();
         $em->remove($contact);
@@ -56,7 +57,7 @@ class ContactController extends Controller
      */
     public function newAction(Request $request)
     {
-        $contact = new Tcontacts();
+        $contact = new Contacts();
 
         $form = $this->createForm(ContactType::class, $contact);
 
@@ -75,8 +76,7 @@ class ContactController extends Controller
             $this->addFlash('success', 'You have successfully added contact with ID ' . $contact->getId());
 
             // Clear the form
-            $contact = new Tcontacts();
-            $contact->setUsername('contact_');
+            $contact = new Contacts();
             $form = $this->createForm(ContactType::class, $contact);
 
         }
@@ -89,10 +89,10 @@ class ContactController extends Controller
 
     /**
      * @param Request $request
-     * @param Tcontacts $contact
+     * @param Contacts $contact
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function showAction(Request $request, Tcontacts $contact)
+    public function showAction(Request $request, Contacts $contact)
     {
 
         $form = $this->createForm(ContactType::class, $contact);

@@ -1,0 +1,31 @@
+AppBundle\Entity\Employeeclasses:
+    type: entity
+    table: employeeclasses
+    uniqueConstraints:
+        ID:
+            columns:
+                - ID
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        employeeid:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: employeeID
+        classid:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: classID
+    lifecycleCallbacks: {  }
